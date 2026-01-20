@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Melo Feedback Form</title>
+    <style>
+        .form-container {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container h2 {
+            text-align: center;
+        }
+
+        .form-container label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-container button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 10px;
+            background-color: #06547c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #3897db;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Feedback Form</h2>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSf5icFbxaMFN7dl3D47hJ3ErnRDLsP8q0O6W9OfU2kNHCRIvw/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="submitted=true;">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="entry.1879069257" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="entry.1263620451" required>
+
+        <label for="feedback">Feedback</label>
+        <textarea id="feedback" name="entry.916853533" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
+</form>
+<p id="message"></p>
+
+<script>
+    var submitted = false;
+    document.querySelector("form").onsubmit = function () {
+        document.getElementById("message").innerHTML =
+            "Thank you! Your feedback has been submitted successfully.";
+    };
+</script>
+
+</div>
+
+</body>
+</html>
+
